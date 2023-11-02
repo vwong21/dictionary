@@ -1,0 +1,25 @@
+
+header {
+    width: 65%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 10rem;
+}
+
+#book {
+    font-size: 3rem;
+    color: #757575;
+}
+
+#moon {
+    font-size: 2rem;
+    color: #757575;
+}
+
+#switch-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
