@@ -1,6 +1,4 @@
 import React, { useState, useContext } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './header'
 import { ThemeContext } from './contexts/ThemeContexts'
@@ -15,9 +13,9 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <div id={theme}>
+    <main id={theme}>
       <Header theme={theme} toggleTheme={toggleTheme}/>
-    </div>
+    </main>
     </ThemeContext.Provider>
   )
 }

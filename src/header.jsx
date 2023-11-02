@@ -1,14 +1,15 @@
 import React from "react";
 import { useState } from "react";
 import ReactSwitch from 'react-switch'
+import {BiMoon} from 'react-icons/bi'
 
 const Header = ({theme, toggleTheme}) => {
 
     return (
-        <div>
+        <section id="header">
             <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} checkedIcon/>
-            <p>{theme==="light"?"light":"dark"}</p>
-        </div>
+            <BiMoon/>
+        </section>
     )
 }
 
