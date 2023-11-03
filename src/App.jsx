@@ -12,7 +12,7 @@ function App() {
       setTheme(theme === "light"? "dark": "light")
   }
 
-  const fonts = ['Serif', 'Sans-serif', 'Sonospace']
+  const fonts = ['Serif', 'Sans-serif', 'Monospace']
   const [currFont, setFont] = useState('Serif')
   const changeFont = (font) => {
     currFont != font && setFont(font) 

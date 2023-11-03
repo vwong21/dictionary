@@ -1,6 +1,8 @@
 import React from "react";
+import '../css/app.css'
 
 const FontDropdown = ({font}) => {
-    return(<li>{font}</li>)
+    const fontLower = font.toLowerCase()
+    return(<li id="font-item" style={{fontFamily: fontLower}}>{font}</li>)
 }
 export default FontDropdown
