@@ -26,20 +26,18 @@ const Header = () => {
                     <div id="dropdown-container">
                         <p id="header-p">{currFont}</p>
                         {dropdown && (
-                        <ul id="dropdown-menu"  className={theme}>
+                        <ul id="dropdown-menu" className={theme}>
                             {fonts.map((font, index) => {
                             if (font !== currFont) {
-                                return <FontDropdown key={index} font={font} />;
+                                return <FontDropdown key={index} font={font} toggleDropdown={toggleDropdown} changeFont={changeFont}/>;
                             }
                         })}
                         </ul>
                         )}
                     </div>
-                    
                     <IoIosArrowDown id="down-arrow" onClick={() => {
                         toggleDropdown()
                     }}/>
-
                 </div>
                 <Switch/>
             </div>
