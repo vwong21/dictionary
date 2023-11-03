@@ -1,3 +1,5 @@
+/* Base CSS Template */
+
 html, body, #root {
     height: 100%;
     margin: 0;
@@ -30,15 +32,120 @@ main {
     color: #050505;
 }
 
+/* Header */
+
+header {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    height: 7rem;
+}
+
+#book {
+    font-size: 2rem;
+    color: #757575;
+}
+
+#moon {
+    font-size: 1.5rem;
+    color: #757575;
+}
+
+#down-arrow {
+    color: #8558b6;
+    cursor: pointer;
+}
+
+#right-header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+#font-container {
+    border-right: 1px solid #E8E8E8;
+    padding-right: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+}
+
+#font-container > p {
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+#switch-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+}
+
+#switch-background {
+    background-color: #747474;
+    width: 2rem;
+    height: 1rem;
+    border: 1.5px solid #747474;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.dark #switch-background {
+    background-color: #A245E6;
+    border: 1px solid #A245E6;
+}
+
+#switch {
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+/* Screens above width 700px */
+
 @media screen and (min-width: 700px) {
     main {
         width: 70%;
     }
+
+    header {
+        width: 65%;
+    }
 }
+
+/* Screens above width 1400px */
 
 @media screen and (min-width: 1400px) {
     main {
         width: 60%;
         height: 90%;
+    }
+}
+
+/* Screens above width 1800px */
+
+@media screen and (min-width: 1800px) {
+    header {
+        width: 50%;
+        height: 10rem;
+    }
+
+    #book {
+        font-size: 3rem
+    }
+
+    #moon {
+        font-size: 2rem;
+    }
+
+    #switch-background {
+        height: 1.5rem;
+        width: 3rem;
     }
 }

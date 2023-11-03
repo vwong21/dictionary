@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useContext } from "react";
 import {PiBookThin} from 'react-icons/pi'
 import {IoIosArrowDown} from 'react-icons/io'
-import '../css/header.css'
+import '../css/app.css'
 import { FontContext } from "../contexts/FontContexts";
 import FontDropdown from "./FontDropdown";
 import Switch from "./Switch";
@@ -31,11 +31,9 @@ const Header = () => {
                         ))}
                 
                     </ul>}
-                    
                 </div>
                 <Switch/>
             </div>
-            
         </header>
     )
 }

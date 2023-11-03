@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {PiMoonLight} from 'react-icons/pi'
 import { motion } from "framer-motion";
 import { ThemeContext } from "../contexts/ThemeContexts";
-import '../css/header.css'
+import '../css/app.css'
 
 const Switch = () => {
     const { theme, toggleTheme}  = useContext(ThemeContext)
