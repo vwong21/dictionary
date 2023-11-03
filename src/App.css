@@ -11,20 +11,34 @@ html, body, #root {
 }
 
 main {
-    width: 50%;
-    height: 85%;
+    width: 1000%;
+    height: 100%;
+    overflow-y: auto;
     box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.5);
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-#dark {
+.dark {
     background-color: #050505;
     color: #FFFFFF;
 }
 
-#light {
+.light {
     background-color: #FFFFFF;
     color: #050505;
+}
+
+@media screen and (min-width: 700px) {
+    main {
+        width: 70%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    main {
+        width: 60%;
+        height: 90%;
+    }
 }

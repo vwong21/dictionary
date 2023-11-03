@@ -1,20 +1,20 @@
 
 header {
-    width: 65%;
+    width: 80%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    height: 10rem;
+    height: 5rem;
 }
 
 #book {
-    font-size: 3rem;
+    font-size: 2rem;
     color: #757575;
 }
 
 #moon {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: #757575;
 }
 
@@ -22,4 +22,36 @@ header {
     display: flex;
     flex-direction: row;
     gap: 1rem;
+    align-items: center;
+}
+
+#switch-background {
+    background-color: #747474;
+    width: 2rem;
+    height: 1rem;
+    border: 1.5px solid #747474;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.dark #switch-background {
+    background-color: #A245E6;
+    border: 1px solid #A245E6;
+}
+
+#switch {
+    height: 100%;
+    width: 50%;
+    background-color: white;
+    border-radius: 2rem;
+}
+
+@media screen and (min-width: 700px) {
+    header {
+        width: 65%;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    
 }
