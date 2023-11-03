@@ -5,7 +5,7 @@ header {
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    height: 5rem;
+    height: 7rem;
 }
 
 #book {
@@ -16,6 +16,32 @@ header {
 #moon {
     font-size: 1.5rem;
     color: #757575;
+}
+
+#down-arrow {
+    color: #8558b6;
+    cursor: pointer;
+}
+
+#right-header {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+#font-container {
+    border-right: 1px solid #E8E8E8;
+    padding-right: 1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    gap: 0.75rem;
+    justify-content: space-between;
+}
+
+#font-container > p {
+    font-size: 1.5rem;
+    font-weight: 900;
 }
 
 #switch-container {
@@ -54,4 +80,24 @@ header {
 
 @media screen and (min-width: 1400px) {
     
+}
+
+@media screen and (min-width: 1800px) {
+    header {
+        width: 50%;
+        height: 10rem;
+    }
+
+    #book {
+        font-size: 3rem
+    }
+
+    #moon {
+        font-size: 2rem;
+    }
+
+    #switch-background {
+        height: 1.5rem;
+        width: 3rem;
+    }
 }

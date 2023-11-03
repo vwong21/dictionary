@@ -1,6 +1,6 @@
-import React, { useState, useContext } from 'react'
-import './App.css'
-import Header from './header'
+import React, { useState } from 'react'
+import './css/App.css'
+import Header from './components/header'
 import { ThemeContext } from './contexts/ThemeContexts'
 import { FontContext } from './contexts/FontContexts'
 
@@ -12,8 +12,8 @@ function App() {
       setTheme(theme === "light"? "dark": "light")
   }
 
-  const fonts = ['serif', 'sans-serif', 'monospace']
-  const [currFont, setFont] = useState('serif')
+  const fonts = ['Serif', 'Sans-serif', 'Sonospace']
+  const [currFont, setFont] = useState('Serif')
   const changeFont = (font) => {
     currFont != font && setFont(font) 
   }
