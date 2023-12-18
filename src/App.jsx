@@ -1,31 +1,27 @@
-import React, { useState } from 'react'
-import './css/App.css'
-import Header from './components/header'
-import { ThemeContext } from './contexts/ThemeContexts'
-import { FontContext } from './contexts/FontContexts'
+import React, { useContext, useState } from "react";
+import "./css/App.css";
+import Header from "./components/header";
+import { FontContext } from "./contexts/FontContexts";
+import ThemeProvider from "./contexts/ThemeContexts";
+import { useTheme } from "./contexts/ThemeContexts";
 
 function App() {
-
-  const [theme, setTheme] = useState("light")
-  const toggleTheme = () => {
-      setTheme(theme === "light"? "dark": "light")
-  }
-
-  const fonts = ['Serif', 'Sans-serif', 'Monospace']
-  const [currFont, setFont] = useState('Serif')
+  const theme = useTheme();
+  const fonts = ["Serif", "Sans-serif", "Monospace"];
+  const [currFont, setFont] = useState("Serif");
   const changeFont = (font) => {
-    currFont != font && setFont(font) 
-  }
+    currFont != font && setFont(font);
+  };
 
   return (
-    <FontContext.Provider value={{currFont, changeFont, fonts}}>
-    <ThemeContext.Provider value={{theme, toggleTheme}}>
-    <main className={theme}>
-      <Header/>
-    </main>
-    </ThemeContext.Provider>
+    <FontContext.Provider value={{ currFont, changeFont, fonts }}>
+      <ThemeProvider>
+        <main className={theme}>
+          <Header />
+        </main>
+      </ThemeProvider>
     </FontContext.Provider>
-  )
+  );
 }
 
-export default App
+export default App;
