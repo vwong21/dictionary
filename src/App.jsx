@@ -2,7 +2,6 @@ import React, { useContext, useState } from "react";
 import "./css/App.css";
 import Header from "./components/header";
 import { FontContext } from "./contexts/FontContexts";
-import ThemeProvider from "./contexts/ThemeContexts";
 import { useTheme } from "./contexts/ThemeContexts";
 
 function App() {
@@ -15,11 +14,9 @@ function App() {
 
   return (
     <FontContext.Provider value={{ currFont, changeFont, fonts }}>
-      <ThemeProvider>
-        <main className={theme}>
-          <Header />
-        </main>
-      </ThemeProvider>
+      <main className={theme}>
+        <Header />
+      </main>
     </FontContext.Provider>
   );
 }
