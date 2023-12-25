@@ -2,14 +2,15 @@ import React, { useState, useContext } from "react";
 import { PiBookThin } from "react-icons/pi";
 import { IoIosArrowDown } from "react-icons/io";
 import "../css/app.css";
-import { FontContext } from "../contexts/FontContexts";
+import { useFont, useFontUpdate } from "../contexts/FontContexts";
 import { useTheme } from "../contexts/ThemeContexts";
 import FontDropdown from "./FontDropdown";
 import Switch from "./Switch";
 
 const Header = () => {
   const theme = useTheme();
-  const { currFont, changeFont, fonts } = useContext(FontContext);
+  const { currFont, fonts } = useFont();
+  const changeFont = useFontUpdate();
   const [dropdown, setDropdown] = useState(false);
 
   const toggleDropdown = () => {

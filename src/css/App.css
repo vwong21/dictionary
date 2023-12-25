@@ -12,6 +12,18 @@ html, body, #root {
     align-items: center;
 }
 
+.Serif {
+    font-family: serif;
+}
+
+.Sans-serif {
+    font-family: sans-serif;
+}
+
+.Monospace {
+    font-family: monospace;
+}
+
 main {
     width: 1000%;
     height: 100%;

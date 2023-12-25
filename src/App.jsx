@@ -1,23 +1,18 @@
 import React, { useContext, useState } from "react";
 import "./css/App.css";
 import Header from "./components/header";
-import { FontContext } from "./contexts/FontContexts";
 import { useTheme } from "./contexts/ThemeContexts";
+import { useFont } from "./contexts/FontContexts";
 
 function App() {
   const theme = useTheme();
-  const fonts = ["Serif", "Sans-serif", "Monospace"];
-  const [currFont, setFont] = useState("Serif");
-  const changeFont = (font) => {
-    currFont != font && setFont(font);
-  };
+  const { currFont, fonts } = useFont();
+  console.log(currFont);
 
   return (
-    <FontContext.Provider value={{ currFont, changeFont, fonts }}>
-      <main className={theme}>
-        <Header />
-      </main>
-    </FontContext.Provider>
+    <main className={`${theme} ${currFont}`}>
+      <Header />
+    </main>
   );
 }
 
