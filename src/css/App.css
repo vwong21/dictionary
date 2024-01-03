@@ -148,6 +148,38 @@ header {
     border-radius: 2rem;
 }
 
+/* Search Bar */
+#search-container {
+    width: 50%;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-radius: 0.5rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    display: flex;
+}
+
+#search-bar::-webkit-search-clear-button,
+#search-bar::-webkit-search-cancel-button,
+#search-bar::-webkit-search-results-button,
+#search-bar::-webkit-search-results-decoration,
+#search-bar::-webkit-appearance{
+  display: none;
+}
+
+#search-bar {
+    font-size: 1.25rem;
+    font-weight: 900;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    background-color: #f4f4f4;
+
+}
+
 /* Screens above width 700px */
 
 @media screen and (min-width: 700px) {
