@@ -94,7 +94,6 @@ header {
 
 #header-p {
     font-size: 1.25rem;
-    font-weight: 900;
     margin: 0;
     padding: 0.5rem 0 0.5rem 0;
 }
@@ -150,7 +149,7 @@ header {
 
 /* Search Bar */
 #search-container {
-    width: 50%;
+    width: 60%;
     padding: 1rem;
     background-color: #f4f4f4;
     border-radius: 0.5rem;
@@ -158,6 +157,15 @@ header {
     outline: none;
     padding: 1rem;
     display: flex;
+}
+
+#search-container.dark {
+    background-color: #1f1f1f;
+    * {
+        background-color: #1f1f1f;
+        color: white;
+    }
+    
 }
 
 #search-bar::-webkit-search-clear-button,
@@ -170,7 +178,6 @@ header {
 
 #search-bar {
     font-size: 1.25rem;
-    font-weight: 900;
     width: 100%;
     padding: 0;
     margin: 0;

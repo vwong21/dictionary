@@ -4,10 +4,10 @@ import axios from "axios";
 import { useFont } from "../contexts/FontContexts";
 import { CiSearch } from "react-icons/ci";
 import { useWordUpdate } from "../contexts/WordContexts";
-import { useWord } from "../contexts/WordContexts";
+import { useTheme } from "../contexts/ThemeContexts";
 
 const Search = () => {
-  const word = useWord();
+  const theme = useTheme();
   const { currFont, fonts } = useFont();
   const updateWord = useWordUpdate();
   const [searchQuery, setSearchQuery] = useState("");
@@ -24,7 +24,7 @@ const Search = () => {
   }
 
   return (
-    <div id="search-container">
+    <div id="search-container" className={theme}>
       <input type="search" className={currFont} id="search-bar" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)}></input>
       <label>
         <CiSearch
