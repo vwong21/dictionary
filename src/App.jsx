@@ -14,7 +14,6 @@ function App() {
     <main className={`${theme} ${currFont}`}>
       <Header />
       <Search />
-      <p>{word}</p>
     </main>
   );
 }

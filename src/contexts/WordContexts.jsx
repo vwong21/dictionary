@@ -1,23 +1,27 @@
 import { createContext, useContext, useState, axios } from "react";
 
 const WordContext = createContext();
-
+const WordUpdateContext = createContext()
 const WordProvider = ({ children }) => {
   const [word, setWord] = useState("none");
-  const getWord = (searchWord) => {
-    axios
-      .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`)
-      .then((res) => {
-        const newWord = res.data;
-        setWord(newWord);
-      });
+  const getWord = (newWord) => {
+    setWord(newWord)
   };
-  return <WordContext.Provider value={word}>{children}</WordContext.Provider>;
+  return (
+  <WordContext.Provider value={word}>
+    <WordUpdateContext.Provider value={getWord}>
+      {children}
+    </WordUpdateContext.Provider>
+  </WordContext.Provider>)
 };
 
 const useWord = () => {
   return useContext(WordContext);
 };
 
+const useWordUpdate = () => {
+  return useContext(WordUpdateContext)
+}
+
 export default WordProvider;
-export { useWord };
+export { useWord, useWordUpdate };

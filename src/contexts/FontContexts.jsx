@@ -20,7 +20,6 @@ const FontProvider = ({ children }) => {
 };
 
 const useFont = () => {
-  console.log(useContext(FontContext));
   return useContext(FontContext);
 };
 
