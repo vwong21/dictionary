@@ -13,19 +13,31 @@ const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const searchApi = async () => {
     try {
-      const res = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/en/${searchQuery}`)
-      updateWord(res.data)
-    } catch(error) {  
-      console.error(error)
+      const res = await axios.get(
+        `https://api.dictionaryapi.dev/api/v2/entries/en/${searchQuery}`
+      );
+      updateWord(res.data);
+    } catch (error) {
+      updateWord("404");
     }
-  }
+  };
   const handleIconClick = () => {
-    searchApi()
-  }
+    if (searchQuery != "") {
+      searchApi();
+      setSearchQuery("");
+    }
+  };
 
   return (
-    <div id="search-container" className={theme}>
-      <input type="search" className={currFont} id="search-bar" value={searchQuery} onChange={(event) => setSearchQuery(event.target.value)}></input>
+    <div id="search-container" className={`${theme} sizes`}>
+      <input
+        type="search"
+        className={currFont}
+        id="search-bar"
+        value={searchQuery}
+        onChange={(event) => setSearchQuery(event.target.value)}
+        autoComplete="off"
+      ></input>
       <label>
         <CiSearch
           style={{

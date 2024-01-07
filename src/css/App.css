@@ -12,6 +12,10 @@ html, body, #root {
     align-items: center;
 }
 
+.sizes {
+    width: 80%;
+}
+
 .Serif {
     font-family: serif;
 }
@@ -25,7 +29,7 @@ html, body, #root {
 }
 
 main {
-    width: 1000%;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
     box-shadow: 5px 5px 15px -5px rgba(0,0,0,0.5);
@@ -47,7 +51,6 @@ main {
 /* Header */
 
 header {
-    width: 80%;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -149,8 +152,7 @@ header {
 
 /* Search Bar */
 #search-container {
-    width: 60%;
-    padding: 1rem;
+    padding: 1rem 0 1rem 0;
     background-color: #f4f4f4;
     border-radius: 0.5rem;
     border: none;
@@ -187,6 +189,18 @@ header {
 
 }
 
+/* Main Word Content */
+
+#word-header {
+    display: flex;
+    width: 100%;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 0;
+}
+
 /* Screens above width 700px */
 
 @media screen and (min-width: 700px) {
@@ -194,7 +208,7 @@ header {
         width: 70%;
     }
 
-    header {
+    .sizes {
         width: 65%;
     }
 }
@@ -212,8 +226,11 @@ header {
 
 @media screen and (min-width: 1800px) {
     header {
-        width: 50%;
         height: 10rem;
+    }
+
+    .sizes {
+        width: 50%;
     }
 
     #book {

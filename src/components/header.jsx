@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   return (
-    <header>
+    <header className="sizes">
       <div id="left-header">
         <PiBookThin id="book" />
       </div>
