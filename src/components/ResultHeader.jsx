@@ -2,30 +2,32 @@ import React from "react";
 import { FaPlay } from "react-icons/fa";
 import useSound from "use-sound";
 
-const ResultHeader = ({word, theme}) => {
-    const isFound = word === "404";
-    const findAudioSource = (phonetics) => {
-        for (const phonetic of phonetics) {
-          if (phonetic.audio && phonetic.audio !== "") {
-            return phonetic.audio;
-          }
-        }
-        return null;
-      };
-    const audioSource = findAudioSource(word[0].phonetics);
-    const [play] = useSound(audioSource)
-    const findPhoneticText = (phonetics) => {
-        for (const phonetic of phonetics) {
-          if (phonetic.text && phonetic.text !== "") {
-            return phonetic.text;
-          }
-        }
-        return null; // Return null if no valid phonetic text is found
-      };
-    const phoneticText = findPhoneticText(word[0].phonetics);
-    return(
-        <>
-        {isFound ? (
+const ResultHeader = ({ word, theme }) => {
+  const isFound = word === "404";
+  const findAudioSource = (phonetics) => {
+    for (const phonetic of phonetics) {
+      if (phonetic.audio && phonetic.audio !== "") {
+        return phonetic.audio;
+      }
+    }
+    console.log("No Audio Available");
+    return null;
+  };
+  const audioSource = findAudioSource(word[0].phonetics);
+  const [play] = useSound(audioSource);
+  const findPhoneticText = (phonetics) => {
+    for (const phonetic of phonetics) {
+      if (phonetic.text && phonetic.text !== "") {
+        return phonetic.text;
+      }
+    }
+    console.log("No Phonetics Available");
+    return null;
+  };
+  const phoneticText = findPhoneticText(word[0].phonetics);
+  return (
+    <>
+      {isFound ? (
         <p>Not Found</p>
       ) : (
         <>
@@ -42,8 +44,8 @@ const ResultHeader = ({word, theme}) => {
           </div>
         </>
       )}
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default ResultHeader
+export default ResultHeader;
