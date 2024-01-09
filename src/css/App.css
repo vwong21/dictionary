@@ -1,5 +1,8 @@
 /* Base CSS Template */
-
+* {
+    margin: 0;
+    padding: 0;
+}
 html, body, #root {
     height: 100%;
     margin: 0;
@@ -157,8 +160,8 @@ header {
     border-radius: 0.5rem;
     border: none;
     outline: none;
-    padding: 1rem;
     display: flex;
+    justify-content: center;
 }
 
 #search-container.dark {
@@ -180,7 +183,7 @@ header {
 
 #search-bar {
     font-size: 1.25rem;
-    width: 100%;
+    width: 92.5%;
     padding: 0;
     margin: 0;
     outline: none;
@@ -191,14 +194,48 @@ header {
 
 /* Main Word Content */
 
-#word-header {
-    display: flex;
+#word-header-container {
+    margin-top: 3rem;
     width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 0.5fr;
+    grid-gap: none;
+    grid-template-areas: 
+    "header audio"
+    "phonetic audio";
 }
 
 h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin: 0;
+    grid-area: header;
+}
+
+#audio-container {
+    grid-area: audio;
+    display: grid;
+    place-items: center;
+}
+
+#audio {
+    background-color: #EBCFFB;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+}
+
+.dark #audio {
+    background-color: #2E1342;
+}
+
+#phonetic {
+    color: #A049DC;
+    grid-area: phonetic;
+    font-size: 1.5rem;
 }
 
 /* Screens above width 700px */

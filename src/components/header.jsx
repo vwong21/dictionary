@@ -20,7 +20,11 @@ const Header = () => {
   return (
     <header className="sizes">
       <div id="left-header">
-        <PiBookThin id="book" />
+        <PiBookThin
+          id="book"
+          style={{ cursor: "pointer" }}
+          onClick={() => window.location.reload(false)}
+        />
       </div>
 
       <div id="right-header">
