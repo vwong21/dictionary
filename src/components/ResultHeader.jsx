@@ -14,6 +14,15 @@ const ResultHeader = ({word, theme}) => {
       };
     const audioSource = findAudioSource(word[0].phonetics);
     const [play] = useSound(audioSource)
+    const findPhoneticText = (phonetics) => {
+        for (const phonetic of phonetics) {
+          if (phonetic.text && phonetic.text !== "") {
+            return phonetic.text;
+          }
+        }
+        return null; // Return null if no valid phonetic text is found
+      };
+    const phoneticText = findPhoneticText(word[0].phonetics);
     return(
         <>
         {isFound ? (
@@ -29,7 +38,7 @@ const ResultHeader = ({word, theme}) => {
                 </div>
               </div>
             )}
-            <p id="phonetic">{word[0].phonetic}</p>
+            <p id="phonetic">{phoneticText}</p>
           </div>
         </>
       )}
