@@ -214,8 +214,9 @@ h1 {
 
 #audio-container {
     grid-area: audio;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 #audio {
@@ -236,6 +237,8 @@ h1 {
     color: #A049DC;
     grid-area: phonetic;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
 }
 
 /* Screens above width 700px */
